@@ -71,7 +71,7 @@
                                     <tr>
                                         <td style="width:55%">Salario proporcional</td>
                                         <td class="text-success fw-medium">
-                                            + <h:outputText value="#{nominaBean.nominaActual.calcularSalario()}">
+                                            + <h:outputText value="#{nominaBean.nominaActual.salarioProporcional}">
                                                 <f:convertNumber type="currency" currencySymbol="$"
                                                                  groupingUsed="true" maxFractionDigits="0"/>
                                             </h:outputText>
@@ -113,7 +113,7 @@
                                         <td><strong>NETO A PAGAR</strong></td>
                                         <td>
                                             <strong>
-                                                <h:outputText value="#{nominaBean.nominaActual.calcularNeto()}">
+                                                <h:outputText value="#{nominaBean.nominaActual.neto}">
                                                     <f:convertNumber type="currency" currencySymbol="$"
                                                                      groupingUsed="true" maxFractionDigits="0"/>
                                                 </h:outputText>
@@ -138,7 +138,7 @@
 
                 </h:panelGroup>
 
-                <h:panelGroup rendered="#{nominaBean.nominaActual == null}">
+                <h:panelGroup rendered="#{nominaBean.nominaActual == null}" layout="block">
                     <div class="alert alert-warning">
                         No hay nómina calculada.
                         <h:link outcome="/index.xhtml" styleClass="alert-link ms-1">Ir al formulario</h:link>
